@@ -22,7 +22,6 @@ const MainNavigation = () => {
           <li>
             <Link href="/build-new-cv">Build New CV</Link>
           </li>
-          <p> test</p>
         </ul>
       </nav>
     </header>
