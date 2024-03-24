@@ -1,0 +1,321 @@
+.form {
+  padding: 1rem;
+  margin-left: 60px;
+}
+
+.form h2 {
+  color: #001a8b;
+  font-size: 30px;
+  margin-left: -24px;
+}
+
+.form h3 {
+  color: #001a8b;
+  font-size: 24px;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  border: solid;
+  border-color: #005eab;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.image-wrapper label {
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #001a8b;
+  font-weight: bold;
+}
+
+.image-wrapper input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.image-wrapper label:hover {
+  background-color: #b7e2ff;
+}
+
+.image-wrapper-icon {
+  margin-right: 10px;
+  /* You can use an actual image or an icon font */
+  background-image: url("/icons/cloud-upload.svg");
+  color: #001a8b;
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.image label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
+.image input {
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 610px;
+  border-color: #005eab;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+  gap: 20px; /* Adds space between rows and columns */
+  max-width: 700px; /* Optional: limits form width */
+  /* Optional: centers the form on the page */
+}
+.control {
+  display: flexbox;
+  flex-direction: column;
+  margin-bottom: -10px;
+  margin-left: 20px;
+  /* margin-left: 10px; */
+}
+
+.control label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
+.control input {
+  display: block;
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 250px;
+  border-color: #005eab;
+}
+
+.noteContainor h2 {
+  color: rgb(180, 34, 34);
+}
+.note {
+  width: 30px;
+  height: 30px;
+  color: rgb(180, 34, 34);
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.untilNowCheckbox {
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.untilNowCheckbox label {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
+.textarea {
+  margin-top: 25px;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -10px;
+  margin-left: 20px;
+}
+
+.textarealabel {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
+.textareaBox {
+  margin-bottom: 25px;
+  resize: none;
+  font-size: 20px;
+  font-weight: normal;
+  border: solid 1px #001a8b;
+  border-radius: 4px;
+  width: 610px;
+}
+
+.cancelIcon {
+  width: 30px;
+  height: 30px;
+  color: #001a8b;
+  margin-left: 420px;
+  cursor: pointer;
+}
+
+.workDatesContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.workDates {
+  /* display: table-column; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* flex-direction: column; */
+  margin-bottom: 20px;
+  margin-left: 20px;
+  /* margin-left: 10px; */
+}
+.workDates label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
+.workDates input {
+  display: block;
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 150px;
+  border-color: #005eab;
+}
+
+.actions {
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.actions button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #001a8b;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #001a8b;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #0e25a5;
+  border-color: #0e25a5;
+}
+
+.addMore {
+  width: 60px;
+  height: 60px;
+  color: #001a8b;
+  margin-top: 30px;
+  margin-left: 300px;
+  cursor: pointer;
+}
+
+.educationContent {
+  display: flex;
+  flex-direction: row;
+}
+.educationDates {
+  /* display: table-column; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* flex-direction: column; */
+  margin-bottom: 20px;
+  margin-left: 20px;
+
+  /* margin-left: 10px; */
+}
+.educationDates label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 50px;
+}
+
+.educationDates input {
+  display: block;
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 150px;
+  border-color: #005eab;
+}
+
+.educationControl {
+  display: flexbox;
+  flex-direction: row;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 80px;
+  /* margin-left: 10px; */
+}
+
+.educationControl label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
+.educationControl input {
+  display: block;
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 250px;
+  border-color: #005eab;
+}
+
+.addMoreEducation {
+  width: 60px;
+  height: 60px;
+  color: #001a8b;
+  margin-top: 10px;
+  margin-left: 300px;
+  cursor: pointer;
+}
+
+.cancelEducationIcon {
+  width: 30px;
+  height: 30px;
+  color: #001a8b;
+  margin-left: 346px;
+  cursor: pointer;
+}
+
+.cancelProjectIcon {
+  width: 30px;
+  height: 30px;
+  color: #001a8b;
+  margin-left: 490px;
+  cursor: pointer;
+  margin-top: 20px;
+}

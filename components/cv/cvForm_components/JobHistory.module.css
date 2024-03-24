@@ -1,0 +1,135 @@
+.noteContainor h2 {
+  color: rgb(180, 34, 34);
+}
+.note {
+  width: 30px;
+  height: 30px;
+  color: rgb(180, 34, 34);
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.jobHistoryContent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+  gap: 20px; /* Adds space between rows and columns */
+  max-width: 700px; /* Optional: limits form width */
+  /* Optional: centers the form on the page */
+}
+
+.jobHistoryDatesContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.jobHistoryDates {
+  /* display: table-column; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* flex-direction: column; */
+  margin-bottom: 20px;
+  margin-left: 20px;
+  /* margin-left: 10px; */
+}
+.jobHistoryDates label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
+.jobHistoryDates input {
+  display: block;
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 150px;
+  border-color: #005eab;
+}
+
+.untilNowCheckbox {
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.untilNowCheckbox label {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
+.jobHistoryControl {
+  display: flexbox;
+  flex-direction: column;
+  margin-bottom: -10px;
+  margin-left: 20px;
+  /* margin-left: 10px; */
+}
+
+.jobHistoryControl label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
+.jobHistoryControl input {
+  display: block;
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 250px;
+  border-color: #005eab;
+}
+
+.jobHistoryTextarea {
+  margin-top: 25px;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -10px;
+  margin-left: 20px;
+}
+
+.jobHistoryTextarealabel {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
+.jobHistoryTextareaBox {
+  margin-bottom: 25px;
+  resize: none;
+  font-size: 20px;
+  font-weight: normal;
+  border: solid 1px #001a8b;
+  border-radius: 4px;
+  width: 610px;
+}
+
+.addMore {
+  width: 60px;
+  height: 60px;
+  color: #001a8b;
+  margin-top: 30px;
+  margin-left: 300px;
+  cursor: pointer;
+}
+
+.displayedH3 {
+  display: flex; /* This enables Flexbox */
+  align-items: center; /* This vertically centers the icon and text within the container */
+  gap: 10px;
+}
+.cancelIcon {
+  width: 30px;
+  height: 30px;
+  color: #001a8b;
+  cursor: pointer;
+}
