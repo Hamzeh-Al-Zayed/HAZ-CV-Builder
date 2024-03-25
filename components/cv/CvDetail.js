@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import CvCard from "../ui/CvCard";
 
 import classes from "./CvDetail.module.css";
@@ -7,8 +7,19 @@ import { IoMailSharp } from "react-icons/io5";
 import { FaLinkedin } from "react-icons/fa";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
+import { useState } from "react";
 
 const CvDetail = (props) => {
+  //   const [showAddressData, setShowAddressData] = useState(false);
+
+  // const contact_address = props.contacts
+
+  //   useEffect(() => {
+  //     if (props.address !== "") {
+  //       setShowAddressData(true);
+  //     }
+  //   }, []);
+
   console.log(props);
   return (
     <Fragment>
@@ -18,34 +29,43 @@ const CvDetail = (props) => {
             <li>
               <span>Contact</span>
             </li>
-            <div className={classes.contactData}>
-              <FaLocationDot className={classes.contactIcon} /> {props.address}
-            </div>
-            <div className={classes.contactData}>
-              <FaSquarePhone className={classes.contactIcon} />{" "}
-              {props.phone_Number}
-            </div>
-            <div className={classes.contactData}>
-              <IoMailSharp className={classes.contactIcon} /> {props.email}
-            </div>
-            <div className={classes.contactData}>
-              <FaLinkedin className={classes.contactIcon} />{" "}
-              <a href={props.linkedIn} target="_blank">
-                LinkedIn
-              </a>
-            </div>
-            <div className={classes.contactData}>
-              <BsFillBriefcaseFill className={classes.contactIcon} />{" "}
-              <a href={props.portfolio} target="_blank">
-                Portfolio
-              </a>
-            </div>
-            <div className={classes.contactData}>
-              <FaGithub className={classes.contactIcon} />{" "}
-              <a href={props.gitHub} target="_blank">
-                GitHub
-              </a>
-            </div>
+            <ul className={classes.contactDataUl}>
+              <div className={classes.contactData}>
+                <IoMailSharp className={classes.contactIcon} /> {props.email}
+              </div>
+              {props.contacts &&
+                props.contacts.map((contact, index) => (
+                  <div key={index}>
+                    <div className={classes.contactData}>
+                      <FaLocationDot className={classes.contactIcon} />{" "}
+                      {contact.address}
+                    </div>
+
+                    <div className={classes.contactData}>
+                      <FaSquarePhone className={classes.contactIcon} />{" "}
+                      {contact.phone_Number}
+                    </div>
+                    <div className={classes.contactData}>
+                      <FaLinkedin className={classes.contactIcon} />{" "}
+                      <a href={contact.linkedIn} target="_blank">
+                        LinkedIn
+                      </a>
+                    </div>
+                    <div className={classes.contactData}>
+                      <BsFillBriefcaseFill className={classes.contactIcon} />{" "}
+                      <a href={contact.portfolio} target="_blank">
+                        Portfolio
+                      </a>
+                    </div>
+                    <div className={classes.contactData}>
+                      <FaGithub className={classes.contactIcon} />{" "}
+                      <a href={contact.gitHub} target="_blank">
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                ))}
+            </ul>
           </div>
         </div>
 
@@ -68,51 +88,29 @@ const CvDetail = (props) => {
               <p>{props.selfSummary}</p>
             </div>
           </div>
-          {/* <div className={classes.workHistory}>
+
+          <div className={classes.jobHistory}>
             <li>
               <span>Work History</span>
             </li>
-            <div className={classes.workHistoryContainer}>
-              <div className={classes.workHistory_Leftside}>
-                <div>
-                  <p>{props.first_Job_Start_Date}</p>
-                </div>
-                <div>
-                  <p>{props.first_Job_End_Date}</p>
-                </div>
-              </div>
-              <div className={classes.workHistory_Rightside}>
-                <div>
-                  <h2>{props.first_Job_Title}</h2>
-                </div>
-                <div>
-                  <p>{props.first_Job_Company_Name}</p>
-                </div>
-                <div>
-                  <p>{props.first_Job_Description}</p>
-                </div>
-              </div>
-            </div>
+            <div className={classes.jobHistoryContainer}>
+              <div className={classes.jobHistory_Leftside}></div>
+              <div className={classes.jobHistory_Rightside}>
+                <ul>
+                  {props.jobs &&
+                    props.jobs.map((job, index) => (
+                      <li key={index}>
+                        <h2>{job.jobTitle}</h2>
+                        <div className={classes.jobHistoryDate} key={index}>
+                          <p>{job.jobStartDate}</p>
 
-            <div className={classes.workHistoryContainer}>
-              <div className={classes.workHistory_Leftside}>
-                <div>
-                  <p>{props.second_Job_Start_Date}</p>
-                </div>
-                <div>
-                  <p>{props.second_Job_End_Date}</p>
-                </div>
-              </div>
-              <div className={classes.workHistory_Rightside}>
-                <div>
-                  <h2>{props.second_Job_Title}</h2>
-                </div>
-                <div>
-                  <p>{props.second_Job_Company_Name}</p>
-                </div>
-                <div>
-                  <p>{props.second_Job_Description}</p>
-                </div>
+                          <p>{job.jobEndDate}</p>
+                        </div>
+                        <p>{job.companyName}</p>
+                        <p>{job.jobDescription}</p>
+                      </li>
+                    ))}
+                </ul>
               </div>
             </div>
           </div>
@@ -120,40 +118,16 @@ const CvDetail = (props) => {
       </CvCard>
 
       <CvCard>
-        <div className={classes.leftSection}>
-          <h2>{props.birthday}</h2>
-        </div>
+        <div className={classes.leftSection}></div>
         <div className={classes.rightSection}>
-          <div className={classes.workHistoryContainer}>
-            <div className={classes.workHistory_Leftside}>
-              <div>
-                <p>{props.third_Job_Start_Date}</p>
-              </div>
-              <div>
-                <p>{props.third_Job_End_Date}</p>
-              </div>
-            </div>
-            <div className={classes.workHistory_Rightside}>
-              <div>
-                <h2>{props.third_Job_Title}</h2>
-              </div>
-              <div>
-                <p>{props.third_Job_Company_Name}</p>
-              </div>
-              <div>
-                <p>{props.third_Job_Description}</p>
-              </div>
-            </div>
-          </div> */}
-
-          <div className={classes.workHistory}>
+          <div className={classes.coursesCertificates}>
             <li>
               <span>Courses / Certificates</span>
             </li>
-            <div className={classes.workHistoryContainer}>
-              <div className={classes.project_Leftside}></div>
-              <div className={classes.project_Rightside}>
-                <ul className={classes.coursesCertificates}>
+            <div className={classes.coursesCertificatesContainer}>
+              <div className={classes.coursesCertificates_Leftside}></div>
+              <div className={classes.coursesCertificates_Rightside}>
+                <ul className={classes.coursesCertificatesList}>
                   {props.courses_Certificates &&
                     props.courses_Certificates.map((course, index) => (
                       <li key={index}>{course}</li>
@@ -195,11 +169,11 @@ const CvDetail = (props) => {
             </div>
           </div>
 
-          <div className={classes.workHistory}>
+          <div className={classes.project}>
             <li>
               <span>Projects:</span>
             </li>
-            <div className={classes.workHistoryContainer}>
+            <div className={classes.projectContainer}>
               <div className={classes.project_Leftside}></div>
               <div className={classes.project_Rightside}>
                 <ul>

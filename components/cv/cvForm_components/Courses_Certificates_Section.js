@@ -56,15 +56,17 @@ const Courses_Certificates_Section = (props) => {
         ></input>
         <CiCirclePlus className={classes.addMoreCourses} onClick={addCourse} />
       </div>
-      <ul className={classes.courseControlUl}>
+      <ul>
         {props.courses_Certificates &&
           props.courses_Certificates.map((course, index) => (
             <li key={index}>
-              {course}{" "}
-              <MdCancel
-                className={classes.removeCourse}
-                onClick={() => removeCourse(index)}
-              />
+              <h3 className={classes.displayedH3}>
+                {course}{" "}
+                <MdCancel
+                  className={classes.removeCourse}
+                  onClick={() => removeCourse(index)}
+                />
+              </h3>
             </li>
           ))}
       </ul>

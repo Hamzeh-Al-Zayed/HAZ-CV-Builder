@@ -3,29 +3,6 @@ import CvList from "@/components/cv/CvList";
 import { Fragment } from "react";
 import Head from "next/head";
 
-// const DUMMY_Profile = [
-//   {
-//     id: "m1",
-//     name: "Jonna Hill",
-//     image: "/images/man1.jpg",
-//     job_title: "UI UX Designer",
-//     email: "JonnaHill@gmail.com",
-//   },
-//   {
-//     id: "m2",
-//     name: "Mark Keal",
-//     image: "/images/man2.jpg",
-//     job_title: "Home Designer",
-//     email: "MarkKeal@gmail.com",
-//   },
-//   {
-//     id: "m3",
-//     name: "Jake Paul",
-//     image: "/images/man3.jpg",
-//     job_title: "Youtuber",
-//     email: "JakePaul@gmail.com",
-//   },
-// ];
 const HomePage = (props) => {
   return (
     <Fragment>

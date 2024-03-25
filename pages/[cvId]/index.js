@@ -10,12 +10,8 @@ const CvDetails = (props) => {
       selfSummary={props.data.selfSummary}
       email={props.data.email}
       birthday={props.data.birthday}
-      address={props.data.address}
-      phone_Number={props.data.phone_Number}
-      linkedIn={props.data.linkedIn}
-      portfolio={props.data.portfolio}
-      gitHub={props.data.gitHub}
-      jobHistory={props.data.jobHistory}
+      contacts={props.data.contacts}
+      jobs={props.data.jobs}
       courses_Certificates={props.data.courses_Certificates}
       educations={props.data.educations}
       projects={props.data.projects}
@@ -47,13 +43,9 @@ export async function getStaticPaths() {
       selfSummary: data[key].selfSummary,
       birthday: data[key].birthday,
 
-      address: data[key].address,
-      phone_Number: data[key].phone_Number,
-      linkedIn: data[key].linkedIn,
-      portfolio: data[key].portfolio,
-      gitHub: data[key].gitHub,
+      contacts: data[key].contacts,
 
-      jobHistory: data[key].jobHistory,
+      jobs: data[key].jobs,
       courses_Certificates: data[key].courses_Certificates,
       educations: data[key].educations,
       projects: data[key].projects,

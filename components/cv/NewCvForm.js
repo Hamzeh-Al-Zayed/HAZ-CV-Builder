@@ -5,6 +5,7 @@ import Courses_Certificates_Section from "./cvForm_components/Courses_Certificat
 import ProjectsSection from "./cvForm_components/ProjectsSection";
 import Education from "./cvForm_components/Education";
 import JobHistory from "./cvForm_components/JobHistory";
+import Contacts from "./cvForm_components/Contacts";
 
 const NewCvForm = (props) => {
   const [formData, setFormData] = useState({
@@ -14,12 +15,8 @@ const NewCvForm = (props) => {
     email: "",
     selfSummary: "",
     birthday: "",
-    address: "",
-    phone_Number: "",
-    linkedIn: "",
-    portfolio: "",
-    gitHub: "",
-    jobHistory: [],
+    contacts: [],
+    jobs: [],
     courses_Certificates: [],
     educations: [],
     projects: [],
@@ -116,73 +113,13 @@ const NewCvForm = (props) => {
             maxLength={300}
           ></textarea>
         </div>
-        <h2>Contact:</h2>
-        <div className={classes.content}>
-          <address className={classes.control}>
-            <label htmlFor="address">Address</label>
-            <input
-              type="text"
-              required
-              id="address"
-              value={formData.address}
-              name="address"
-              onChange={changeHandler}
-            ></input>
-          </address>
 
-          <div className={classes.control}>
-            <label htmlFor="phone_Number">Phone Number</label>
-            <input
-              type="tel"
-              required
-              id="phone_Number"
-              value={formData.phone_Number}
-              name="phone_Number"
-              onChange={changeHandler}
-            ></input>
-          </div>
-        </div>
-
-        <div className={classes.image}>
-          <label htmlFor="linkedIn">LinkedIn Profile URL</label>
-          <input
-            type="url"
-            required
-            id="linkedIn"
-            value={formData.linkedIn}
-            name="linkedIn"
-            onChange={changeHandler}
-          ></input>
-        </div>
-
-        <div className={classes.image}>
-          <label htmlFor="portfolio">Portfolio URL</label>
-          <input
-            type="url"
-            required
-            id="portfolio"
-            value={formData.portfolio}
-            name="portfolio"
-            onChange={changeHandler}
-          ></input>
-        </div>
-
-        <div className={classes.image}>
-          <label htmlFor="gitHub">GitHub URL</label>
-          <input
-            type="url"
-            required
-            id="gitHub"
-            value={formData.gitHub}
-            name="gitHub"
-            onChange={changeHandler}
-          ></input>
-        </div>
-
-        <JobHistory
+        <Contacts
           setFormData={setFormData}
-          jobHistory={formData.jobHistory}
-        ></JobHistory>
+          contacts={formData.contacts}
+        ></Contacts>
+
+        <JobHistory setFormData={setFormData} jobs={formData.jobs}></JobHistory>
 
         <Courses_Certificates_Section
           courses_Certificates={formData.courses_Certificates}

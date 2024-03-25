@@ -26,11 +26,6 @@
   margin-right: 20px;
 }
 
-.courseControlUl {
-  color: #001a8b;
-  line-height: 25px;
-}
-
 .courseControlUl li {
   display: flex; /* This enables Flexbox */
   align-items: center; /* This vertically centers the icon and text within the container */
@@ -46,9 +41,16 @@
 }
 
 .removeCourse {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   color: #001a8b;
   margin-left: 15px;
   cursor: pointer;
+}
+
+.displayedH3 {
+  display: flex; /* This enables Flexbox */
+  align-items: center; /* This vertically centers the icon and text within the container */
+  gap: 10px;
+  margin: 8px;
 }

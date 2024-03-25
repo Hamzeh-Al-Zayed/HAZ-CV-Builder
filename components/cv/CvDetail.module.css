@@ -14,6 +14,9 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.contactDataUl {
+  padding-left: 0px;
+}
 .contactContent {
   grid-template-columns: 1fr 2fr;
   grid-gap: 20px;
@@ -103,13 +106,13 @@
   color: rgb(72, 72, 72);
 }
 
-.workHistory {
+.jobHistory {
   grid-template-columns: 1fr 2fr;
   grid-gap: 20px;
   background-color: lightgreen;
 }
 
-.workHistory li {
+.jobHistory li {
   margin-left: 20px;
   margin-top: 20px;
   font-size: 24px;
@@ -117,72 +120,142 @@
   font-weight: bold;
 }
 
-.workHistory span {
+.jobHistory span {
   position: relative;
   left: -14px;
 }
 
-.workHistoryContainer {
+.jobHistoryContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  background-color: rgb(153, 205, 153);
+  margin-top: 10px;
+}
+
+.jobHistory_Rightside {
+  background-color: rgb(20, 194, 20);
+  margin-left: 138px;
+  max-width: 380px;
+}
+.jobHistory_Rightside h2 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 22px;
+}
+.jobHistory_Rightside p {
+  margin-top: 6px;
+  font-size: 20px;
+  color: rgb(72, 72, 72);
+}
+
+.jobHistory_Rightside ul {
+  padding-left: 0px;
+}
+
+.jobHistory_Rightside li {
+  margin-top: 6px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: black;
+  font-weight: normal;
+  max-width: 380px;
+}
+
+.jobHistoryDate {
+  display: flex;
+  flex-direction: row;
+}
+.jobHistoryDate p {
+  color: rgb(110, 110, 110);
+  font-size: 16px;
+  margin-right: 10px;
+  font-weight: normal;
+  margin-bottom: 6px;
+}
+.coursesCertificates {
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+  background-color: lightgreen;
+}
+
+.coursesCertificates li {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #1140a4;
+  font-weight: bold;
+}
+
+.coursesCertificates span {
+  position: relative;
+  left: -14px;
+}
+
+.coursesCertificates_Leftside {
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+  margin-left: 98px;
+}
+
+.coursesCertificates_Leftside ul {
+  padding-left: 0px;
+}
+
+.coursesCertificates_Rightside {
+  background-color: rgb(20, 194, 20);
+  margin-left: 40px;
+  max-width: 380px;
+}
+
+.coursesCertificates_Rightside ul {
+  padding-left: 0px;
+}
+
+.coursesCertificates_Rightside li {
+  margin-top: 6px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: black;
+  font-weight: normal;
+  max-width: 380px;
+}
+
+.coursesCertificates_Rightside h2 {
+  margin-top: 6px;
+  margin-bottom: 8px;
+  font-size: 22px;
+  max-width: 380px;
+}
+.coursesCertificates_Rightside p {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: rgb(72, 72, 72);
+  max-width: 380px;
+}
+
+.coursesCertificates_Rightside a {
+  font-size: 18px;
+}
+
+.coursesCertificatesContainer {
   display: flex;
   flex-direction: row;
 
   align-items: start;
   background-color: rgb(153, 205, 153);
   margin-top: 10px;
-  margin-bottom: 40px;
 }
 
-.workHistory_Leftside {
-  display: flex;
-  flex-direction: column;
-  background-color: aquamarine;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.workHistory_Leftside p {
-  color: rgb(72, 72, 72);
-  margin-bottom: 10px;
-}
-
-.workHistory_Rightside {
-  background-color: rgb(20, 194, 20);
-  margin-left: 40px;
-  max-width: 380px;
-}
-.workHistory_Rightside h2 {
-  margin-top: 6px;
-  margin-bottom: 12px;
-  font-size: 22px;
-}
-.workHistory_Rightside p {
-  margin-top: 6px;
-  font-size: 20px;
-  color: rgb(72, 72, 72);
-}
-
-.coursesCertificatesContainer {
-  margin-bottom: 35px;
-}
-
-.coursesCertificatesNameContainer li {
-  background-color: rgb(20, 194, 20);
-  margin-left: 20px;
-  font-size: 24px;
-  color: #1140a4;
-  font-weight: bold;
-}
-.coursesCertificatesNameContainer span {
-  position: relative;
-  left: -14px;
-}
-
-.coursesCertificates {
+.coursesCertificatesList {
   margin-top: 14px;
   font-size: 20px;
   color: rgb(72, 72, 72);
 }
 
-.coursesCertificates li {
+.coursesCertificatesList li {
   margin-bottom: 10px;
 }
 
@@ -229,7 +302,6 @@
 .education_Rightside {
   background-color: rgb(20, 194, 20);
   margin-left: 60px;
-
   max-width: 380px;
 }
 
@@ -263,6 +335,35 @@
 .education_Rightside a {
   font-size: 18px;
 }
+
+.project {
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+  background-color: lightgreen;
+}
+
+.project li {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #1140a4;
+  font-weight: bold;
+}
+
+.projectspan {
+  position: relative;
+  left: -14px;
+}
+
+.projectContainer {
+  display: flex;
+  flex-direction: row;
+
+  align-items: start;
+  background-color: rgb(153, 205, 153);
+  margin-top: 10px;
+}
+
 .project_Leftside {
   display: flex;
   flex-direction: column;
@@ -277,7 +378,6 @@
 .project_Rightside {
   background-color: rgb(20, 194, 20);
   margin-left: 40px;
-
   max-width: 380px;
 }
 
