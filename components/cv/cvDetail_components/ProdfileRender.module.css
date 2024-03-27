@@ -1,0 +1,53 @@
+.image {
+  width: 160px;
+  height: 160px;
+  border-radius: 100px;
+  box-shadow: 2px 7px 4px #6363637e;
+  object-fit: cover;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+
+.image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.text {
+  display: inline-block;
+  margin-left: 30px;
+  max-width: 300px;
+}
+.text h2 {
+  margin-top: 30px;
+  font-size: 50px;
+  color: #1140a4;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 0px;
+  max-width: 300px;
+}
+
+.text h3 {
+  font-size: 28px;
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2a61a5;
+  margin-bottom: 0px;
+  max-width: 200px;
+  font-weight: normal;
+}
+
+.text p {
+  font-size: 20px;
+  margin-top: 1px;
+  color: #2977d0;
+}
+
+.selfSummary {
+  margin-left: 20px;
+  margin-top: 35px;
+  width: 500px;
+
+  line-height: 25px;
+  color: rgb(72, 72, 72);
+}

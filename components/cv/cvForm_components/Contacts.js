@@ -100,7 +100,7 @@ const Contacts = ({ setFormData }) => {
         ></input>
       </div>
       {!showDone && (
-        <CiCirclePlus className={classes.addMore} onClick={addContact} />
+        <CiCirclePlus className={classes.addMoreContact} onClick={addContact} />
       )}
       {showDone && <p className={classes.done}>Done!</p>}
     </Fragment>

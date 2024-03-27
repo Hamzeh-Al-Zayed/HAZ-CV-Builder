@@ -1,21 +1,20 @@
 import CvDetail from "@/components/cv/CvDetail";
-import { useEffect } from "react";
+import { Fragment } from "react";
+import ProjectSectionRender from "@/components/cv/cvDetail_components/ProjectSectionRender";
 
 const CvDetails = (props) => {
   return (
-    <CvDetail
-      image={props.data.image}
-      name={props.data.name}
-      job_title={props.data.job_title}
-      selfSummary={props.data.selfSummary}
-      email={props.data.email}
-      birthday={props.data.birthday}
-      contacts={props.data.contacts}
-      jobs={props.data.jobs}
-      courses_Certificates={props.data.courses_Certificates}
-      educations={props.data.educations}
-      projects={props.data.projects}
-    />
+    <Fragment>
+      <CvDetail
+        profiles={props.data.profiles}
+        contacts={props.data.contacts}
+        jobs={props.data.jobs}
+        courses_Certificates={props.data.courses_Certificates}
+        educations={props.data.educations}
+        technicalSkills={props.data.technicalSkills}
+        projects={props.data.projects}
+      />
+    </Fragment>
   );
 };
 
@@ -36,19 +35,13 @@ export async function getStaticPaths() {
   for (const key in data) {
     loadedCvs.push({
       id: key,
-      name: data[key].name,
-      image: data[key].image,
-      email: data[key].email,
-      job_title: data[key].job_title,
-      selfSummary: data[key].selfSummary,
-      birthday: data[key].birthday,
-
+      profiles: data[key].profiles,
       contacts: data[key].contacts,
-
       jobs: data[key].jobs,
       courses_Certificates: data[key].courses_Certificates,
       educations: data[key].educations,
       projects: data[key].projects,
+      technicalSkills: data[key].technicalSkills,
     });
   }
 

@@ -1,0 +1,76 @@
+.education {
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+  background-color: lightgreen;
+}
+
+.education li {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #1140a4;
+  font-weight: bold;
+}
+
+.education span {
+  position: relative;
+  left: -14px;
+}
+
+.educationContainer {
+  display: flex;
+  flex-direction: row;
+
+  align-items: start;
+  background-color: rgb(153, 205, 153);
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.education_Leftside {
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+  margin-left: 20px;
+}
+.education_Leftside p {
+  color: rgb(72, 72, 72);
+  margin-bottom: 10px;
+}
+
+.education_Rightside {
+  background-color: rgb(20, 194, 20);
+  margin-left: 60px;
+  max-width: 380px;
+}
+
+.education_Rightside ul {
+  padding-left: 0px;
+}
+
+.education_Rightside li {
+  margin-top: 6px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: black;
+  font-weight: normal;
+  max-width: 380px;
+}
+
+.education_Rightside h2 {
+  margin-top: 6px;
+  margin-bottom: 8px;
+  font-size: 22px;
+  max-width: 380px;
+}
+.education_Rightside p {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: rgb(72, 72, 72);
+  max-width: 380px;
+}
+
+.education_Rightside a {
+  font-size: 18px;
+}

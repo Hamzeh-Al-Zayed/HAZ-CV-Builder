@@ -6,29 +6,19 @@ import ProjectsSection from "./cvForm_components/ProjectsSection";
 import Education from "./cvForm_components/Education";
 import JobHistory from "./cvForm_components/JobHistory";
 import Contacts from "./cvForm_components/Contacts";
+import Profile from "./cvForm_components/Profile";
+import TechnicalSkills from "./cvForm_components/TechnicalProfile";
 
 const NewCvForm = (props) => {
   const [formData, setFormData] = useState({
-    image: "",
-    name: "",
-    job_title: "",
-    email: "",
-    selfSummary: "",
-    birthday: "",
+    profiles: [],
     contacts: [],
     jobs: [],
     courses_Certificates: [],
     educations: [],
     projects: [],
+    technicalSkills: [],
   });
-
-  const changeHandler = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -39,80 +29,10 @@ const NewCvForm = (props) => {
   return (
     <FromCard>
       <form className={classes.form} onSubmit={submitHandler}>
-        <h2>Pesonal Information:</h2>
-        <div className={classes.image}>
-          <label htmlFor="image">Upload Image URL</label>
-          <input
-            type="url"
-            required
-            id="image"
-            value={formData.image}
-            name="image"
-            onChange={changeHandler}
-            accept="image/*"
-          ></input>
-        </div>
-        <div className={classes.content}>
-          <div className={classes.control}>
-            <label htmlFor="name">Full Name</label>
-            <input
-              type="text"
-              required
-              id="name"
-              value={formData.name}
-              name="name"
-              onChange={changeHandler}
-            ></input>
-          </div>
-          <div className={classes.control}>
-            <label htmlFor="job_title">Job Title</label>
-            <input
-              type="text"
-              required
-              id="job_title"
-              value={formData.job_title}
-              name="job_title"
-              onChange={changeHandler}
-            ></input>
-          </div>
-          <div className={classes.control}>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              required
-              id="email"
-              value={formData.email}
-              name="email"
-              onChange={changeHandler}
-            ></input>
-          </div>
-          <div className={classes.control}>
-            <label htmlFor="birthday">BirthDay</label>
-            <input
-              type="date"
-              required
-              id="birthday"
-              value={formData.birthday}
-              name="birthday"
-              onChange={changeHandler}
-            ></input>
-          </div>
-        </div>
-        <div className={classes.textarea}>
-          <label className={classes.textarealabel} htmlFor="summary">
-            Self Summary
-          </label>
-          <textarea
-            className={classes.textareaBox}
-            required
-            id="summary"
-            rows="9"
-            value={formData.selfSummary}
-            name="selfSummary"
-            onChange={changeHandler}
-            maxLength={300}
-          ></textarea>
-        </div>
+        <Profile
+          setFormData={setFormData}
+          profiles={formData.profiles}
+        ></Profile>
 
         <Contacts
           setFormData={setFormData}
@@ -131,6 +51,11 @@ const NewCvForm = (props) => {
           setFormData={setFormData}
           projects={formData.projects}
         ></ProjectsSection>
+
+        <TechnicalSkills
+          technicalSkills={formData.technicalSkills}
+          setFormData={setFormData}
+        ></TechnicalSkills>
 
         <div className={classes.actions}>
           <button>Build New CV</button>

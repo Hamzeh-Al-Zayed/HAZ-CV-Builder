@@ -29,10 +29,7 @@ export async function getStaticProps() {
   for (const key in data) {
     loadedCvs.push({
       id: key,
-      name: data[key].name,
-      image: data[key].image,
-      email: data[key].email,
-      job_title: data[key].job_title,
+      profiles: data[key].profiles || null,
     });
   }
 

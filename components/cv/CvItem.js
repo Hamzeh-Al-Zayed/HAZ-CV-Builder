@@ -12,23 +12,17 @@ const CvItem = (props) => {
   return (
     <li className={classes.item}>
       <Card>
-        <div className={classes.content}>
-          {/* <Image
-            className={classes.image}
-            src={props.image}
-            alt="The Clint image"
-            width={50}
-            height={50}
-            unoptimized={true}
-            priority
-          ></Image> */}
-          <img className={classes.image} src={props.image}></img>
-          <div className={classes.text}>
-            <h2>{props.name}</h2>
-            <h3>{props.job_title}</h3>
-            <p>{props.email}</p>
-          </div>
-        </div>
+        {props.profiles &&
+          props.profiles.map((profile, index) => (
+            <div key={index} className={classes.content}>
+              <img className={classes.image} src={profile.image}></img>
+              <div className={classes.text}>
+                <h2>{profile.name}</h2>
+                <h3>{profile.job_title}</h3>
+                <p>{profile.email}</p>
+              </div>
+            </div>
+          ))}
         <div className={classes.actions}>
           <button onClick={showDetialHandler}>Show CV</button>
         </div>

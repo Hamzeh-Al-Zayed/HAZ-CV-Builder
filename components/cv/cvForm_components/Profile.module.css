@@ -1,3 +1,27 @@
+.image {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.image label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
+.image input {
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 610px;
+  border-color: #005eab;
+}
+
 .content {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Creates two columns */
@@ -31,31 +55,34 @@
   border-color: #005eab;
 }
 
-.image {
+.textarea {
+  margin-top: 25px;
+  max-width: 560px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
   margin-left: 20px;
-  margin-top: 30px;
 }
 
-.image label {
+.textarealabel {
+  display: block;
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: #001a8b;
   margin-right: 10px;
 }
 
-.image input {
-  font: inherit;
+.textareaBox {
+  margin-bottom: 25px;
+  resize: none;
+  font-size: 20px;
+  font-weight: normal;
+  border: solid 1px #001a8b;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  padding: 0.25rem;
   width: 610px;
-  border-color: #005eab;
 }
 
-.addMoreContact {
+.addMoreProfile {
   width: 60px;
   height: 60px;
   color: #001a8b;
