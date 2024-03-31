@@ -1,4 +1,4 @@
-import classes from "./languagesRender.module.css";
+import classes from "./LanguagesRender.module.css";
 
 const LanguagesRender = (props) => {
   console.log(props.languages);
