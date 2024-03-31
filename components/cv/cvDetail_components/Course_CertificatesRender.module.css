@@ -48,10 +48,12 @@
 }
 
 .coursesCertificates_Rightside h2 {
-  margin-top: 6px;
-  margin-bottom: 8px;
-  font-size: 22px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 20px;
   max-width: 380px;
+  font-weight: normal;
+  color: rgb(72, 72, 72);
 }
 .coursesCertificates_Rightside p {
   margin-top: 8px;

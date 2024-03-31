@@ -1,4 +1,4 @@
-.technicalControl {
+.competenciesControl {
   display: flex;
   flex-direction: row;
   align-items: start;
@@ -7,7 +7,7 @@
   /* margin-left: 10px; */
 }
 
-.technicalControl label {
+.competenciesControl label {
   display: inline-block;
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -15,7 +15,7 @@
   margin-right: 10px;
 }
 
-.technicalControl input {
+.competenciesControl input {
   display: inline-block;
   font: inherit;
   border-radius: 4px;
@@ -26,7 +26,7 @@
   margin-right: 20px;
 }
 
-.addMoreSkills {
+.addMoreCompetence {
   width: 30px;
   height: 30px;
   color: #001a8b;
@@ -34,7 +34,7 @@
   margin-right: 10px;
 }
 
-.removeSkill {
+.removeCompetence {
   width: 25px;
   height: 25px;
   color: #001a8b;
@@ -42,16 +42,16 @@
   cursor: pointer;
 }
 
-.technicalUl {
+.competenceUl {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
 }
-.technicalUl li {
+.competenceUl li {
   flex: 1 1 50%;
 }
-.technicalUl h3 {
+.competenceUl h3 {
   margin-top: 10px;
   margin-bottom: 10px;
 }

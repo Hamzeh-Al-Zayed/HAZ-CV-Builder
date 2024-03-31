@@ -1,7 +1,6 @@
 import classes from "./Course_CertificatesRender.module.css";
 
 const Course_CertificatesRender = (props) => {
-  console.log(props.courses_Certificates);
   return (
     <div className={classes.coursesCertificates}>
       <li>

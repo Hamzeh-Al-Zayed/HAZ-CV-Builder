@@ -1,7 +1,6 @@
 import classes from "./EducationRender.module.css";
 
 const EducationRender = (props) => {
-  console.log(props.educations);
   return (
     <div className={classes.education}>
       <li>

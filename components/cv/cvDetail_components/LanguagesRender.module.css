@@ -1,0 +1,46 @@
+.languages {
+  margin-top: 30px;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+  background-color: lightgreen;
+}
+
+.languages span {
+  font-size: 24px;
+  position: relative;
+  left: -14px;
+  font-weight: bold;
+}
+
+.languages li {
+  margin-left: 20px;
+  font-size: 24px;
+  color: #1140a4;
+}
+
+.languagesContainer {
+  display: flex;
+  flex-direction: row;
+
+  align-items: start;
+  background-color: rgb(153, 205, 153);
+}
+
+.languagesList {
+  margin-top: 8px;
+  font-size: 20px;
+  color: black;
+}
+
+.languagesList li {
+  color: black;
+  font-size: 20px;
+}
+
+.languagesList p {
+  font-size: 18px;
+  color: rgb(72, 72, 72);
+  margin: 10px;
+  position: relative;
+  left: -10px;
+}

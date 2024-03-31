@@ -9,15 +9,20 @@ import Course_CertificatesRender from "./cvDetail_components/Course_Certificates
 import JobHistoryRender from "./cvDetail_components/JobHistoryRender";
 import ProdfileRender from "./cvDetail_components/ProdfileRender";
 import ContactsRender from "./cvDetail_components/ContactsRender";
+import TechnicalProfileRender from "./cvDetail_components/TechnicalProfileRender";
+import CompetenciesRender from "./cvDetail_components/CompetenciesRender";
+import LanguagesRender from "./cvDetail_components/languagesRender";
 
 const CvDetail = (props) => {
-  console.log(props.projects);
+  console.log(props.languages);
 
   return (
     <Fragment>
       <CvCard>
         <div className={classes.leftSection}>
           <ContactsRender profiles={props.profiles} contacts={props.contacts} />
+          <TechnicalProfileRender technicalSkills={props.technicalSkills} />
+          <CompetenciesRender competencies={props.competencies} />
         </div>
 
         <div className={classes.rightSection}>
@@ -27,7 +32,9 @@ const CvDetail = (props) => {
       </CvCard>
 
       <CvCard>
-        <div className={classes.leftSection}></div>
+        <div className={classes.leftSection}>
+          <LanguagesRender languages={props.languages} />
+        </div>
         <div className={classes.rightSection}>
           <Course_CertificatesRender
             courses_Certificates={props.courses_Certificates}

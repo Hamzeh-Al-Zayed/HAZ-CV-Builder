@@ -5,6 +5,7 @@
   grid-template-columns: 1fr 2fr;
   grid-gap: 20px;
   background-color: lightgreen;
+  margin-top: 30px;
 }
 
 .contactContent li {

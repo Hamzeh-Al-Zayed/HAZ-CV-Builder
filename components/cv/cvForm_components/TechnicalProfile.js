@@ -10,7 +10,7 @@ const TechnicalSkills = (props) => {
     setCurrentTechnicalSkills(event.target.value);
   };
 
-  const MAX_TECHNICALSKILLS = 10;
+  const MAX_TECHNICALSKILLS = 12;
 
   const addTechnicalSkills = (event) => {
     event.preventDefault();
@@ -20,7 +20,7 @@ const TechnicalSkills = (props) => {
       props.technicalSkills &&
       props.technicalSkills.length >= MAX_TECHNICALSKILLS
     ) {
-      alert(`You can add no more than ${MAX_TECHNICALSKILLS} Courses`);
+      alert(`You can add no more than ${MAX_TECHNICALSKILLS} Skills`);
       return;
     }
 

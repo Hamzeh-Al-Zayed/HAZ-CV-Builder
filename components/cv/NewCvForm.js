@@ -8,6 +8,8 @@ import JobHistory from "./cvForm_components/JobHistory";
 import Contacts from "./cvForm_components/Contacts";
 import Profile from "./cvForm_components/Profile";
 import TechnicalSkills from "./cvForm_components/TechnicalProfile";
+import Competencies from "./cvForm_components/Competencies";
+import Languages from "./cvForm_components/Languages";
 
 const NewCvForm = (props) => {
   const [formData, setFormData] = useState({
@@ -18,6 +20,8 @@ const NewCvForm = (props) => {
     educations: [],
     projects: [],
     technicalSkills: [],
+    competencies: [],
+    languages: [],
   });
 
   const submitHandler = (event) => {
@@ -56,6 +60,16 @@ const NewCvForm = (props) => {
           technicalSkills={formData.technicalSkills}
           setFormData={setFormData}
         ></TechnicalSkills>
+
+        <Competencies
+          competencies={formData.competencies}
+          setFormData={setFormData}
+        ></Competencies>
+
+        <Languages
+          languages={formData.languages}
+          setFormData={setFormData}
+        ></Languages>
 
         <div className={classes.actions}>
           <button>Build New CV</button>
