@@ -20,7 +20,7 @@ const Languages = ({ setFormData }) => {
   ];
 
   const addLanguage = () => {
-    if (languages.length < 5) {
+    if (languages.length < 6) {
       const updatedLanguages = [...languages, { language, level }];
       setLanguages(updatedLanguages);
       setLanguage("");
@@ -33,7 +33,7 @@ const Languages = ({ setFormData }) => {
         }));
       }
     } else {
-      alert("Maximum of 5 languages can be added.");
+      alert("Maximum of 6 languages can be added.");
     }
   };
 
@@ -77,11 +77,11 @@ const Languages = ({ setFormData }) => {
 
         <CiCirclePlus className={classes.addLanguage} onClick={addLanguage} />
       </div>
-      <ul>
+      <ul className={classes.languageUl}>
         {languages.map((lang, index) => (
           <li key={index}>
             <h3 className={classes.displayedH3}>
-              {lang.language} - {lang.level}
+              - {lang.language} - {lang.level}
               <MdCancel onClick={() => removeLanguage(index)} />
             </h3>
           </li>

@@ -13,8 +13,7 @@ const LanguagesRender = (props) => {
             props.languages.map((languages, index) => (
               <li key={index} className={classes.languagesLi}>
                 <p>
-                  {languages.language}
-                  {languages.level}
+                  {languages.language} - {languages.level}
                 </p>
               </li>
             ))}

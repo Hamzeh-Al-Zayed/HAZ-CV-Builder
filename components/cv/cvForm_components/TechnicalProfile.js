@@ -65,7 +65,7 @@ const TechnicalSkills = (props) => {
           props.technicalSkills.map((skill, index) => (
             <li key={index}>
               <h3 className={classes.displayedH3}>
-                {skill}
+                - {skill}
                 <MdCancel
                   className={classes.removeSkill}
                   onClick={() => removeTechnicalSkills(index)}

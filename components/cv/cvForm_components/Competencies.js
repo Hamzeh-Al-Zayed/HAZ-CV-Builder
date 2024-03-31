@@ -58,7 +58,7 @@ const Competencies = (props) => {
           props.competencies.map((competence, index) => (
             <li key={index}>
               <h3 className={classes.displayedH3}>
-                {competence}
+                - {competence}
                 <MdCancel
                   className={classes.removeCompetence}
                   onClick={() => removeCompetencies(index)}

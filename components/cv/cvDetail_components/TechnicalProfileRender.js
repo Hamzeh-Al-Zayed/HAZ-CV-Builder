@@ -4,13 +4,13 @@ const TechnicalProfileRender = (props) => {
   return (
     <div className={classes.technicalSkills}>
       <li>
-        <span> Technical Profile</span>
+        <span>Technical Profile</span>
       </li>
       <div className={classes.technicalSkillsContainer}>
         <ul className={classes.technicalSkillsList}>
           {props.technicalSkills &&
             props.technicalSkills.map((skill, index) => (
-              <li key={index} className={classes.technicalSkillsLi}>
+              <li key={index}>
                 <p>{skill}</p>
               </li>
             ))}

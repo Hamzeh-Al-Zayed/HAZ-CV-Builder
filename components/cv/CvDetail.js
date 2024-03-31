@@ -1,8 +1,6 @@
 import { Fragment } from "react";
 import CvCard from "../ui/CvCard";
-
 import classes from "./CvDetail.module.css";
-
 import ProjectSectionRender from "./cvDetail_components/ProjectSectionRender";
 import EducationRender from "./cvDetail_components/EducationRender";
 import Course_CertificatesRender from "./cvDetail_components/Course_CertificatesRender";
@@ -12,6 +10,7 @@ import ContactsRender from "./cvDetail_components/ContactsRender";
 import TechnicalProfileRender from "./cvDetail_components/TechnicalProfileRender";
 import CompetenciesRender from "./cvDetail_components/CompetenciesRender";
 import LanguagesRender from "./cvDetail_components/LanguagesRender";
+import InterestsRender from "./cvDetail_components/InterestsRender";
 
 const CvDetail = (props) => {
   console.log(props.languages);
@@ -34,6 +33,7 @@ const CvDetail = (props) => {
       <CvCard>
         <div className={classes.leftSection}>
           <LanguagesRender languages={props.languages} />
+          <InterestsRender interests={props.interests} />
         </div>
         <div className={classes.rightSection}>
           <Course_CertificatesRender

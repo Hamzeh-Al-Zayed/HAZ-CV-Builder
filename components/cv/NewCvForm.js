@@ -10,6 +10,7 @@ import Profile from "./cvForm_components/Profile";
 import TechnicalSkills from "./cvForm_components/TechnicalProfile";
 import Competencies from "./cvForm_components/Competencies";
 import Languages from "./cvForm_components/Languages";
+import Interests from "./cvForm_components/Interests";
 
 const NewCvForm = (props) => {
   const [formData, setFormData] = useState({
@@ -22,6 +23,7 @@ const NewCvForm = (props) => {
     technicalSkills: [],
     competencies: [],
     languages: [],
+    interests: [],
   });
 
   const submitHandler = (event) => {
@@ -70,6 +72,11 @@ const NewCvForm = (props) => {
           languages={formData.languages}
           setFormData={setFormData}
         ></Languages>
+
+        <Interests
+          interests={formData.interests}
+          setFormData={setFormData}
+        ></Interests>
 
         <div className={classes.actions}>
           <button>Build New CV</button>

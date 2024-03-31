@@ -15,6 +15,7 @@ const CvDetails = (props) => {
         projects={props.data.projects}
         competencies={props.data.competencies}
         languages={props.data.languages}
+        interests={props.data.interests}
       />
     </Fragment>
   );
@@ -46,6 +47,7 @@ export async function getStaticPaths() {
       technicalSkills: data[key].technicalSkills,
       competencies: data[key].competencies,
       languages: data[key].languages,
+      interests: data[key].interests,
     });
   }
 
