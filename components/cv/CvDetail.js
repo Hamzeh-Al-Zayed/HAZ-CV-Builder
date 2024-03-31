@@ -11,7 +11,7 @@ import ProdfileRender from "./cvDetail_components/ProdfileRender";
 import ContactsRender from "./cvDetail_components/ContactsRender";
 import TechnicalProfileRender from "./cvDetail_components/TechnicalProfileRender";
 import CompetenciesRender from "./cvDetail_components/CompetenciesRender";
-import LanguagesRender from "./cvDetail_components/languagesRender";
+import LanguagesRender from "./cvDetail_components/LanguagesRender";
 
 const CvDetail = (props) => {
   console.log(props.languages);
