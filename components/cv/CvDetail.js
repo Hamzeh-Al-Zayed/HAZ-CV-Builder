@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import CvCard from "../ui/CvCard";
 import classes from "./CvDetail.module.css";
 import ProjectSectionRender from "./cvDetail_components/ProjectSectionRender";
@@ -11,12 +11,45 @@ import TechnicalProfileRender from "./cvDetail_components/TechnicalProfileRender
 import CompetenciesRender from "./cvDetail_components/CompetenciesRender";
 import LanguagesRender from "./cvDetail_components/LanguagesRender";
 import InterestsRender from "./cvDetail_components/InterestsRender";
+import ConfirmDeletePopup from "../ui/ConfirmDeletePopup";
+import Backdrop from "../ui/Backdrop";
+import { useRouter } from "next/router";
+import EditCvPage from "@/pages/edit-cv/[cvId]";
 
 const CvDetail = (props) => {
-  console.log(props.languages);
+  const router = useRouter();
+  const editCvHandler = () => {
+    router.push(`/edit-cv/${props.cvId}`);
+  };
+
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+
+  const showDeleteConfirmationHandler = () => {
+    setShowDeleteConfirmation(true);
+  };
+
+  const hideDeleteConfirmationHandler = () => {
+    setShowDeleteConfirmation(false);
+  };
 
   return (
     <Fragment>
+      <div className={classes.actions}>
+        <button onClick={showDeleteConfirmationHandler}>Delete</button>
+        <button onClick={editCvHandler}>Edit CV</button>
+        {/* <EditCvPage cvId={props.cvId} /> */}
+      </div>
+
+      {showDeleteConfirmation && (
+        <ConfirmDeletePopup
+          cvId={props.cvId}
+          onClick={hideDeleteConfirmationHandler}
+        />
+      )}
+      {showDeleteConfirmation && (
+        <Backdrop onClick={hideDeleteConfirmationHandler} />
+      )}
+
       <CvCard>
         <div className={classes.leftSection}>
           <ContactsRender profiles={props.profiles} contacts={props.contacts} />

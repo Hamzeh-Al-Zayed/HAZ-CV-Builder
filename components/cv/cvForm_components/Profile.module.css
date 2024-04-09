@@ -13,13 +13,26 @@
   margin-right: 10px;
 }
 
-.image input {
+.imageInput {
   font: inherit;
   border-radius: 4px;
   border: 1px solid #ccc;
   padding: 0.25rem;
   width: 610px;
   border-color: #005eab;
+}
+
+.imageErrorInput {
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 610px;
+  border-color: red;
+}
+
+.image input::placeholder {
+  color: #bfbfbf;
 }
 
 .content {
@@ -45,7 +58,7 @@
   margin-right: 10px;
 }
 
-.control input {
+.controlInput {
   display: block;
   font: inherit;
   border-radius: 4px;
@@ -53,6 +66,16 @@
   padding: 0.25rem;
   width: 250px;
   border-color: #005eab;
+}
+
+.controlErrorInput {
+  display: block;
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 250px;
+  border-color: red;
 }
 
 .textarea {
@@ -82,6 +105,16 @@
   width: 610px;
 }
 
+.textareaBoxErrorInput {
+  margin-bottom: 1px;
+  resize: none;
+  font-size: 20px;
+  font-weight: normal;
+  border: 1px solid red;
+  border-radius: 4px;
+  width: 610px;
+}
+
 .addMoreProfile {
   width: 60px;
   height: 60px;
@@ -92,8 +125,13 @@
 }
 
 .done {
-  margin-left: 300px;
+  margin-left: 200px;
   font-size: 24px;
   font-weight: bold;
   color: #001a8b;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.8rem;
 }

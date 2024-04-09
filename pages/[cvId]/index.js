@@ -1,11 +1,12 @@
 import CvDetail from "@/components/cv/CvDetail";
+import CvItem from "@/components/cv/CvItem";
 import { Fragment } from "react";
-import ProjectSectionRender from "@/components/cv/cvDetail_components/ProjectSectionRender";
 
 const CvDetails = (props) => {
   return (
     <Fragment>
       <CvDetail
+        cvId={props.data.id}
         profiles={props.data.profiles}
         contacts={props.data.contacts}
         jobs={props.data.jobs}

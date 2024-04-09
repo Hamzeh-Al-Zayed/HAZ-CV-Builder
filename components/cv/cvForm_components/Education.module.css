@@ -1,13 +1,14 @@
-.content {
+.educationContent {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Creates two columns */
   gap: 20px; /* Adds space between rows and columns */
   max-width: 700px; /* Optional: limits form width */
   /* Optional: centers the form on the page */
 }
-.educationContent {
-  display: flex;
-  flex-direction: row;
+
+.educationDatesContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .educationDates {
   /* display: table-column; */
@@ -15,7 +16,6 @@
   /* flex-direction: column; */
   margin-bottom: 20px;
   margin-left: 20px;
-
   /* margin-left: 10px; */
 }
 .educationDates label {
@@ -23,10 +23,10 @@
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: #001a8b;
-  margin-right: 50px;
+  margin-right: 10px;
 }
 
-.educationDates input {
+.educationDatesInput {
   display: block;
   font: inherit;
   border-radius: 4px;
@@ -36,12 +36,35 @@
   border-color: #005eab;
 }
 
+.educationDatesErrorInput {
+  display: block;
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 150px;
+  border-color: red;
+  margin-bottom: 0px;
+}
+
+.untilNowCheckbox {
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.untilNowCheckbox label {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #001a8b;
+  margin-right: 10px;
+}
+
 .educationControl {
   display: flexbox;
-  flex-direction: row;
-  margin-bottom: 20px;
+  flex-direction: column;
+  margin-bottom: -10px;
   margin-left: 20px;
-  margin-right: 80px;
   /* margin-left: 10px; */
 }
 
@@ -53,7 +76,7 @@
   margin-right: 10px;
 }
 
-.educationControl input {
+.educationControlInput {
   display: block;
   font: inherit;
   border-radius: 4px;
@@ -63,11 +86,21 @@
   border-color: #005eab;
 }
 
+.educationControlErrorInput {
+  display: block;
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  width: 250px;
+  border-color: red;
+}
+
 .addMoreEducation {
   width: 60px;
   height: 60px;
   color: #001a8b;
-  margin-top: 10px;
+  margin-top: 30px;
   margin-left: 300px;
   cursor: pointer;
 }
@@ -77,19 +110,15 @@
   align-items: center; /* This vertically centers the icon and text within the container */
   gap: 10px;
 }
-
-.cancelEducationIcon {
+.removeEducation {
   width: 30px;
   height: 30px;
   color: #001a8b;
-  margin-left: 346px;
   cursor: pointer;
 }
 
-.removeEducation {
-  width: 25px;
-  height: 25px;
-  color: #001a8b;
-  margin-left: 15px;
-  cursor: pointer;
+.errorMessage {
+  color: red;
+  font-size: 0.8rem;
+  margin-bottom: 0px;
 }

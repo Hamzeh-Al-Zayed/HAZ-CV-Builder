@@ -28,7 +28,7 @@ const NewCv = (props) => {
     }
   };
 
-  return <NewCvForm onAddCv={addCvHandler}></NewCvForm>;
+  return <NewCvForm onSubmitCv={addCvHandler}></NewCvForm>;
 };
 
 export default NewCv;

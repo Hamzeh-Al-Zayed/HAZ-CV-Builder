@@ -17,7 +17,7 @@ const JobHistoryRender = (props) => {
                   <div className={classes.jobHistoryDate} key={index}>
                     <p>{job.jobStartDate}</p>
 
-                    <p>{job.jobEndDate}</p>
+                    <p>- {job.jobEndDate}</p>
                   </div>
                   <p>{job.companyName}</p>
                   <p>{job.jobDescription}</p>

@@ -12,24 +12,26 @@ import Competencies from "./cvForm_components/Competencies";
 import Languages from "./cvForm_components/Languages";
 import Interests from "./cvForm_components/Interests";
 
-const NewCvForm = (props) => {
-  const [formData, setFormData] = useState({
-    profiles: [],
-    contacts: [],
-    jobs: [],
-    courses_Certificates: [],
-    educations: [],
-    projects: [],
-    technicalSkills: [],
-    competencies: [],
-    languages: [],
-    interests: [],
-  });
+const getInitialFormData = (initialData) => ({
+  profiles: initialData.profiles || [],
+  contacts: initialData.contacts || [],
+  jobs: initialData.jobs || [],
+  courses_Certificates: initialData.courses_Certificates || [],
+  educations: initialData.educations || [],
+  projects: initialData.projects || [],
+  technicalSkills: initialData.technicalSkills || [],
+  competencies: initialData.competencies || [],
+  languages: initialData.languages || [],
+  interests: initialData.interests || [],
+});
+
+const NewCvForm = ({ onSubmitCv, initialCvData = {} }) => {
+  const [formData, setFormData] = useState(getInitialFormData(initialCvData));
 
   const submitHandler = (event) => {
     event.preventDefault();
     console.log(formData);
-    props.onAddCv(formData);
+    onSubmitCv(formData);
   };
 
   return (
@@ -37,49 +39,63 @@ const NewCvForm = (props) => {
       <form className={classes.form} onSubmit={submitHandler}>
         <Profile
           setFormData={setFormData}
-          profiles={formData.profiles}
+          initialProfile={
+            formData.profiles.length > 0 ? formData.profiles[0] : undefined
+          }
         ></Profile>
 
         <Contacts
           setFormData={setFormData}
-          contacts={formData.contacts}
+          initialContact={
+            formData.contacts.length > 0 ? formData.contacts[0] : undefined
+          }
         ></Contacts>
 
-        <JobHistory setFormData={setFormData} jobs={formData.jobs}></JobHistory>
+        <JobHistory
+          setFormData={setFormData}
+          initialJobs={formData.jobs}
+        ></JobHistory>
 
         <Courses_Certificates_Section
-          courses_Certificates={formData.courses_Certificates}
+          initialCourses={formData.courses_Certificates || []}
           setFormData={setFormData}
         />
-        <Education educations={formData.educations} setFormData={setFormData} />
+        <Education
+          initialEducations={formData.educations}
+          setFormData={setFormData}
+        />
 
         <ProjectsSection
           setFormData={setFormData}
-          projects={formData.projects}
+          initialProjects={formData.projects}
         ></ProjectsSection>
 
         <TechnicalSkills
-          technicalSkills={formData.technicalSkills}
+          initialTechnicalSkills={formData.technicalSkills || []}
           setFormData={setFormData}
         ></TechnicalSkills>
 
         <Competencies
-          competencies={formData.competencies}
+          initialCompetencies={formData.competencies || []}
           setFormData={setFormData}
         ></Competencies>
 
         <Languages
-          languages={formData.languages}
+          initialLanguages={formData.languages || []}
           setFormData={setFormData}
         ></Languages>
 
         <Interests
-          interests={formData.interests}
+          initialInterests={formData.interests || []}
           setFormData={setFormData}
         ></Interests>
 
         <div className={classes.actions}>
-          <button>Build New CV</button>
+          <button>
+            {Object.keys(initialCvData).length > 0
+              ? "Update CV"
+              : "Build New CV"}
+          </button>
         </div>
       </form>
     </FromCard>

@@ -67,3 +67,22 @@
 .actions button:active {
   background-color: #b7e2ff;
 }
+
+.iconDiv {
+  position: absolute;
+  top: 0; /* Adjust as needed */
+  right: 0; /* Adjust as needed */
+  display: flex;
+  justify-content: end;
+  padding-right: 10px; /* Adjust padding as needed for spacing */
+  padding-top: 10px; /* Adjust padding as needed for spacing */
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  color: #1140a4;
+  margin-top: 20px;
+  margin-left: -10px;
+  margin-right: 30px;
+}

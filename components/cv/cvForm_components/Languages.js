@@ -4,11 +4,24 @@ import Dropdown from "@/components/ui/Dropdown";
 import { CiCirclePlus } from "react-icons/ci";
 import { MdCancel } from "react-icons/md";
 
-const Languages = ({ setFormData }) => {
-  const [languages, setLanguages] = useState([]);
+const Languages = ({ setFormData, initialLanguages = [] }) => {
+  const [languages, setLanguages] = useState(initialLanguages);
   const [language, setLanguage] = useState("");
   const [level, setLevel] = useState("A1");
+  const [errors, setErrors] = useState("");
 
+  const validateInput = (language) => {
+    if (!language.trim()) {
+      return "Language cannot be empty.";
+    }
+    if (language.length > 16) {
+      return "Language cannot be more than 16 letters.";
+    }
+    if (!/^[A-Za-z ]+$/.test(language)) {
+      return "Language can only include letters.";
+    }
+    return "";
+  };
   const levels = [
     { label: "A1", value: "A1" },
     { label: "A2", value: "A2" },
@@ -21,10 +34,17 @@ const Languages = ({ setFormData }) => {
 
   const addLanguage = () => {
     if (languages.length < 6) {
+      const validationError = validateInput(language);
+      if (validationError) {
+        setErrors(validationError);
+        return;
+      }
+
       const updatedLanguages = [...languages, { language, level }];
       setLanguages(updatedLanguages);
       setLanguage("");
       setLevel("A1");
+      setErrors("");
 
       if (setFormData) {
         setFormData((prevFormData) => ({
@@ -38,7 +58,15 @@ const Languages = ({ setFormData }) => {
   };
 
   const languageChangeHandler = (event) => {
-    setLanguage(event.target.value);
+    const language = event.target.value;
+    const validationError = validateInput(language);
+    setLanguage(language);
+    setErrors(validationError);
+  };
+
+  const blurHandler = (event) => {
+    const validationError = validateInput(language);
+    setErrors(validationError);
   };
 
   const levelChangeHandler = (event) => {
@@ -56,17 +84,22 @@ const Languages = ({ setFormData }) => {
     }));
   };
 
+  const languageClasses = errors
+    ? classes.languageControlErrorInput
+    : classes.languageControlInput;
+
   return (
     <Fragment>
       <h2>Languages:</h2>
       <div className={classes.languageControl}>
         <label htmlFor="language">Languages</label>
         <input
+          className={languageClasses}
           type="text"
           value={language}
           onChange={languageChangeHandler}
+          onBlur={blurHandler}
           placeholder="Add a Language"
-          className={classes.input}
         />
         <Dropdown
           value={level}
@@ -77,6 +110,7 @@ const Languages = ({ setFormData }) => {
 
         <CiCirclePlus className={classes.addLanguage} onClick={addLanguage} />
       </div>
+      {errors && <p className={classes.errorMessage}>{errors}</p>}
       <ul className={classes.languageUl}>
         {languages.map((lang, index) => (
           <li key={index}>
