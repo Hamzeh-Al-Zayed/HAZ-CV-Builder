@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useRef } from "react";
 import CvCard from "../ui/CvCard";
 import classes from "./CvDetail.module.css";
 import ProjectSectionRender from "./cvDetail_components/ProjectSectionRender";
@@ -14,9 +14,12 @@ import InterestsRender from "./cvDetail_components/InterestsRender";
 import ConfirmDeletePopup from "../ui/ConfirmDeletePopup";
 import Backdrop from "../ui/Backdrop";
 import { useRouter } from "next/router";
-import EditCvPage from "@/pages/edit-cv/[cvId]";
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 
 const CvDetail = (props) => {
+  const firstCardRef = useRef(null);
+  const secondCardRef = useRef(null);
   const router = useRouter();
   const editCvHandler = () => {
     router.push(`/edit-cv/${props.cvId}`);
@@ -32,12 +35,42 @@ const CvDetail = (props) => {
     setShowDeleteConfirmation(false);
   };
 
+  const downloadPDF = async () => {
+    console.log("Starting PDF generation...");
+    const doc = new jsPDF();
+
+    // Delay to ensure all elements are rendered
+    await new Promise((resolve) => setTimeout(resolve, 1000)); // 1000 ms delay
+
+    const cardElements = document.querySelectorAll("cvCardClass");
+    console.log(`Found ${cardElements.length} elements`);
+
+    for (let i = 0; i < cardElements.length; i++) {
+      if (!cardElements[i]) {
+        console.log(`Element ${i} is not rendered or accessible.`);
+        continue;
+      }
+
+      if (i > 0) doc.addPage();
+
+      await html2canvas(cardElements[i], { scale: 2, useCORS: true }).then(
+        (canvas) => {
+          const imgData = canvas.toDataURL("image/png");
+          doc.addImage(imgData, "PNG", 0, 0, 210, 297);
+        }
+      );
+    }
+
+    doc.save("CV.pdf");
+    console.log("PDF saved successfully.");
+  };
+
   return (
     <Fragment>
       <div className={classes.actions}>
         <button onClick={showDeleteConfirmationHandler}>Delete</button>
         <button onClick={editCvHandler}>Edit CV</button>
-        {/* <EditCvPage cvId={props.cvId} /> */}
+        <button onClick={downloadPDF}>Download as PDF</button>
       </div>
 
       {showDeleteConfirmation && (
@@ -50,7 +83,7 @@ const CvDetail = (props) => {
         <Backdrop onClick={hideDeleteConfirmationHandler} />
       )}
 
-      <CvCard>
+      <CvCard className="cvCardClass">
         <div className={classes.leftSection}>
           <ContactsRender profiles={props.profiles} contacts={props.contacts} />
           <TechnicalProfileRender technicalSkills={props.technicalSkills} />
@@ -63,7 +96,7 @@ const CvDetail = (props) => {
         </div>
       </CvCard>
 
-      <CvCard>
+      <CvCard className="cvCardClass">
         <div className={classes.leftSection}>
           <LanguagesRender languages={props.languages} />
           <InterestsRender interests={props.interests} />

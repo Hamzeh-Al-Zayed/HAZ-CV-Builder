@@ -12,7 +12,7 @@ const CvItem = (props) => {
   const router = useRouter();
 
   const editCvHandler = () => {
-    router.push(`/edit-cv/${props.cvId}`);
+    router.push(`/edit-cv/${props.id}`);
   };
 
   const showDeleteConfirmationHandler = () => {
