@@ -169,14 +169,14 @@ const Education = ({ setFormData, initialEducations }) => {
     const isChecked = event.target.checked;
     setShowEndDate(!isChecked); // Toggle visibility of the end date input
     if (isChecked) {
-      setLastEndDate(education.jobEndDate); // Save the current end date before setting to "Present"
-      setEducation((prevJob) => ({
-        ...prevJob,
+      setLastEndDate(education.educationEndDate); // Save the current end date before setting to "Present"
+      setEducation((prevEducation) => ({
+        ...prevEducation,
         educationEndDate: "Present",
       }));
     } else {
-      setEducation((prevJob) => ({
-        ...prevJob,
+      setEducation((prevEducation) => ({
+        ...prevEducation,
         educationEndDate: lastEndDate, // Restore the last end date when unchecked
       }));
     }

@@ -11,6 +11,7 @@ import TechnicalSkills from "./cvForm_components/TechnicalProfile";
 import Competencies from "./cvForm_components/Competencies";
 import Languages from "./cvForm_components/Languages";
 import Interests from "./cvForm_components/Interests";
+import Activities from "./cvForm_components/Activities";
 
 const getInitialFormData = (initialData) => ({
   profiles: initialData.profiles || [],
@@ -19,6 +20,7 @@ const getInitialFormData = (initialData) => ({
   courses_Certificates: initialData.courses_Certificates || [],
   educations: initialData.educations || [],
   projects: initialData.projects || [],
+  activities: initialData.activities || [],
   technicalSkills: initialData.technicalSkills || [],
   competencies: initialData.competencies || [],
   languages: initialData.languages || [],
@@ -69,6 +71,11 @@ const NewCvForm = ({ onSubmitCv, initialCvData = {} }) => {
           setFormData={setFormData}
           initialProjects={formData.projects}
         ></ProjectsSection>
+
+        <Activities
+          initialActivities={formData.activities}
+          setFormData={setFormData}
+        />
 
         <TechnicalSkills
           initialTechnicalSkills={formData.technicalSkills || []}

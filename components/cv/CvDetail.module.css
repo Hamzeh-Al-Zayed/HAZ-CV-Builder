@@ -1,13 +1,16 @@
 .leftSection {
   margin: 0;
   padding: 0;
-  background-color: lightpink;
+
+  /* background-color: lightpink; */
+  background-color: rgb(198, 241, 255);
 }
 
 .rightSection {
   margin: 0;
   padding: 0;
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  background-color: rgb(198, 241, 255);
   display: flexbox;
   grid-template-columns: 1fr 2fr;
   grid-gap: 20px;
@@ -37,3 +40,5 @@
   background-color: #0e25a5;
   border-color: #0e25a5;
 }
+
+/* CvDetail.module.css */

@@ -2,7 +2,7 @@
   margin-top: 30px;
   grid-template-columns: 1fr 2fr;
   grid-gap: 20px;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }
 
 .languages span {
@@ -23,7 +23,7 @@
   flex-direction: row;
 
   align-items: start;
-  background-color: rgb(153, 205, 153);
+  /* background-color: rgb(153, 205, 153); */
 }
 
 .languagesList {
@@ -38,7 +38,7 @@
 }
 
 .languagesList p {
-  font-size: 18px;
+  font-size: 20px;
   color: rgb(72, 72, 72);
   margin: 10px;
   position: relative;

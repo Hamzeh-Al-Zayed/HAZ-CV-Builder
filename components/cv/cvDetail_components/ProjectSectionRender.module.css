@@ -1,7 +1,7 @@
 .project {
   grid-template-columns: 1fr 2fr;
   grid-gap: 20px;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }
 
 .project li {
@@ -22,14 +22,14 @@
   flex-direction: row;
 
   align-items: start;
-  background-color: rgb(153, 205, 153);
+  /* background-color: rgb(153, 205, 153); */
   margin-top: 10px;
 }
 
 .project_Leftside {
   display: flex;
   flex-direction: column;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   margin-left: 98px;
 }
 
@@ -38,8 +38,8 @@
 }
 
 .project_Rightside {
-  background-color: rgb(20, 194, 20);
-  margin-left: 40px;
+  /* background-color: rgb(20, 194, 20); */
+  margin-left: 0px;
   max-width: 380px;
 }
 

@@ -1,7 +1,7 @@
 .jobHistory {
   grid-template-columns: 1fr 2fr;
   grid-gap: 20px;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }
 
 .jobHistory li {
@@ -21,13 +21,13 @@
   display: flex;
   flex-direction: row;
   align-items: start;
-  background-color: rgb(153, 205, 153);
+  /* background-color: rgb(153, 205, 153); */
   margin-top: 10px;
 }
 
 .jobHistory_Rightside {
-  background-color: rgb(20, 194, 20);
-  margin-left: 138px;
+  /* background-color: rgb(20, 194, 20); */
+  margin-left: 80px;
   max-width: 380px;
 }
 .jobHistory_Rightside h2 {
@@ -60,7 +60,7 @@
 }
 .jobHistoryDate p {
   color: rgb(110, 110, 110);
-  font-size: 16px;
+  font-size: 18px;
   margin-right: 10px;
   font-weight: normal;
   margin-bottom: 6px;

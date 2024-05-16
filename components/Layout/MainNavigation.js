@@ -2,7 +2,11 @@ import classes from "./MainNavigation.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
+import { useRouter } from "next/router";
+
 const MainNavigation = () => {
+  const router = useRouter();
+
   return (
     <header className={classes.header}>
       <Image

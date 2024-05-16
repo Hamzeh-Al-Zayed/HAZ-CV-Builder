@@ -1,8 +1,7 @@
 .competencies {
-  margin-top: 30px;
   grid-template-columns: 1fr 2fr;
   grid-gap: 20px;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }
 
 .competencies span {
@@ -21,9 +20,9 @@
 .competenciesContainer {
   display: flex;
   flex-direction: row;
-
+  margin-bottom: 0px;
   align-items: start;
-  background-color: rgb(153, 205, 153);
+  /* background-color: rgb(153, 205, 153); */
 }
 
 .competenciesList {
@@ -38,9 +37,9 @@
 }
 
 .competenciesList p {
-  font-size: 18px;
+  font-size: 20px;
   color: rgb(72, 72, 72);
-  margin: 10px;
+  margin: 5px;
   position: relative;
   left: -10px;
 }

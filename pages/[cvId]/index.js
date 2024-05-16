@@ -1,5 +1,5 @@
 import CvDetail from "@/components/cv/CvDetail";
-import CvItem from "@/components/cv/CvItem";
+
 import { Fragment } from "react";
 
 const CvDetails = (props) => {
@@ -14,6 +14,7 @@ const CvDetails = (props) => {
         educations={props.data.educations}
         technicalSkills={props.data.technicalSkills}
         projects={props.data.projects}
+        activities={props.data.activities}
         competencies={props.data.competencies}
         languages={props.data.languages}
         interests={props.data.interests}
@@ -45,6 +46,7 @@ export async function getStaticPaths() {
       courses_Certificates: data[key].courses_Certificates,
       educations: data[key].educations,
       projects: data[key].projects,
+      activities: data[key].activities,
       technicalSkills: data[key].technicalSkills,
       competencies: data[key].competencies,
       languages: data[key].languages,

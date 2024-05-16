@@ -1,4 +1,4 @@
-import { Fragment, useState, useRef } from "react";
+import { Fragment, useState } from "react";
 import CvCard from "../ui/CvCard";
 import classes from "./CvDetail.module.css";
 import ProjectSectionRender from "./cvDetail_components/ProjectSectionRender";
@@ -14,15 +14,17 @@ import InterestsRender from "./cvDetail_components/InterestsRender";
 import ConfirmDeletePopup from "../ui/ConfirmDeletePopup";
 import Backdrop from "../ui/Backdrop";
 import { useRouter } from "next/router";
-import html2canvas from "html2canvas";
-import { jsPDF } from "jspdf";
+
+import ActivitiesRender from "./cvDetail_components/ActivitiesRender";
 
 const CvDetail = (props) => {
-  const firstCardRef = useRef(null);
-  const secondCardRef = useRef(null);
   const router = useRouter();
   const editCvHandler = () => {
     router.push(`/edit-cv/${props.cvId}`);
+  };
+
+  const printHandler = () => {
+    window.print();
   };
 
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
@@ -35,42 +37,48 @@ const CvDetail = (props) => {
     setShowDeleteConfirmation(false);
   };
 
-  const downloadPDF = async () => {
-    console.log("Starting PDF generation...");
-    const doc = new jsPDF();
-
-    // Delay to ensure all elements are rendered
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // 1000 ms delay
-
-    const cardElements = document.querySelectorAll("cvCardClass");
-    console.log(`Found ${cardElements.length} elements`);
-
-    for (let i = 0; i < cardElements.length; i++) {
-      if (!cardElements[i]) {
-        console.log(`Element ${i} is not rendered or accessible.`);
-        continue;
-      }
-
-      if (i > 0) doc.addPage();
-
-      await html2canvas(cardElements[i], { scale: 2, useCORS: true }).then(
-        (canvas) => {
-          const imgData = canvas.toDataURL("image/png");
-          doc.addImage(imgData, "PNG", 0, 0, 210, 297);
-        }
-      );
-    }
-
-    doc.save("CV.pdf");
-    console.log("PDF saved successfully.");
-  };
-
   return (
     <Fragment>
+      <style jsx global>{`
+        @media print {
+          body * {
+            visibility: hidden;
+          }
+
+          .print-component,
+          .print-component * {
+            visibility: visible;
+          }
+
+          .print-component {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-origin: top left; /* Ensures scaling happens from the top left corner */
+            transform: scale(1.3); /* Slightly scale up the content */
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          .print-component1 {
+            top: 0;
+          }
+
+          .print-component2 {
+            top: 100vh; /* Position it below the height of the first page */
+          }
+        }
+      `}</style>
+
       <div className={classes.actions}>
         <button onClick={showDeleteConfirmationHandler}>Delete</button>
         <button onClick={editCvHandler}>Edit CV</button>
-        <button onClick={downloadPDF}>Download as PDF</button>
+        <button onClick={printHandler}>Download as PDF</button>
+
+        {/* <WordDownloader profiles={props.profiles}></WordDownloader> */}
       </div>
 
       {showDeleteConfirmation && (
@@ -83,7 +91,7 @@ const CvDetail = (props) => {
         <Backdrop onClick={hideDeleteConfirmationHandler} />
       )}
 
-      <CvCard className="cvCardClass">
+      <CvCard className="print-component print-component1">
         <div className={classes.leftSection}>
           <ContactsRender profiles={props.profiles} contacts={props.contacts} />
           <TechnicalProfileRender technicalSkills={props.technicalSkills} />
@@ -96,7 +104,7 @@ const CvDetail = (props) => {
         </div>
       </CvCard>
 
-      <CvCard className="cvCardClass">
+      <CvCard className="print-component print-component2">
         <div className={classes.leftSection}>
           <LanguagesRender languages={props.languages} />
           <InterestsRender interests={props.interests} />
@@ -107,6 +115,7 @@ const CvDetail = (props) => {
           />
           <EducationRender educations={props.educations} />
           <ProjectSectionRender projects={props.projects} />
+          <ActivitiesRender activities={props.activities} />
         </div>
       </CvCard>
     </Fragment>

@@ -4,7 +4,7 @@
 .contactContent {
   grid-template-columns: 1fr 2fr;
   grid-gap: 20px;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
   margin-top: 30px;
 }
 
@@ -32,6 +32,7 @@
   align-items: center; /* This vertically centers the icon and text within the container */
   gap: 10px;
   color: rgb(72, 72, 72);
+  font-size: 16px;
   margin-top: 10px;
   margin-left: 15px;
   margin-bottom: 10px;
